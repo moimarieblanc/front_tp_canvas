@@ -1,3 +1,7 @@
 #monCanvas {
-    border: 1px solid #111111;
+    border: 1px solid;
+}
+
+#myCanvas {
+    border: 1px solid #aaaaaa;
 }
