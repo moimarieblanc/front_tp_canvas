@@ -19,7 +19,7 @@ createDamier();
 
 let posPionX = 300;
 let posPionY = 150;
-let rayon = 24;
+let rayon = 25;
 
 //creation du pion rouge
 function createPion(posPionX, posPionY){
@@ -37,13 +37,13 @@ createPion(posPionX, posPionY, rayon);
 document.addEventListener('keydown', (event) => {
     const nomTouche = event.key;
   
-    if (nomTouche === 'ArrowUp') {
+    if (nomTouche === 'ArrowUp' && posPionY > 25) {
     posPionY= posPionY - 25;
-    } else if (nomTouche === 'ArrowDown') {
+    } else if (nomTouche === 'ArrowDown' && posPionY < 475) {
         posPionY= posPionY + 25;
-    } else if (nomTouche === 'ArrowLeft') {
+    } else if (nomTouche === 'ArrowLeft' && posPionX > 25) {
         posPionX= posPionX - 25;
-    } else if (nomTouche === 'ArrowRight') {
+    } else if (nomTouche === 'ArrowRight'  && posPionX < 475) {
         posPionX= posPionX + 25;
     } else if (nomTouche === '=') {
         rayon++;
