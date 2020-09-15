@@ -14,7 +14,9 @@ function getRandomColor() {
     }
     return color;
   }  
-  
+
+//get bounding client rect pour la position Dans le canevas ?
+
 //écoute de l'évênement click sur le canevas   
 myCanvas.addEventListener('click', function(event) {
     posX = event.clientX;
@@ -44,14 +46,28 @@ myCanvas.addEventListener('click', function(event) {
 
 })
 
-const savedCircles = JSON.parse(localStorage.getItem("tab"));
-console.log (savedCircles);
-
-for(let circle of savedCircles) {
+//récupération des données sauvergardées au rechargement de la page
+if(localStorage.getItem("tab")) {
+    const savedCircles = JSON.parse(localStorage.getItem("tab"));
+    
+    for(let circle of savedCircles) {
         //création d'un arc de cercle  
         ctx.beginPath();
         ctx.arc(circle.centreX, circle.centreY, circle.rayon, 0, 2 * Math.PI);
         ctx.strokeStyle = circle.couleur;
         ctx.lineWidth = 2; 
         ctx.stroke();
-} 
+    } 
+
+}
+
+
+
+//bouton reset 
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function(){
+    localStorage.clear();
+    ctx.clearRect(0,0,800,650);
+
+})
+
