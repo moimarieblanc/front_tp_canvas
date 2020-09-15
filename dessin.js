@@ -74,4 +74,12 @@ ctx.lineWidth = 5;
 
 ctx.stroke();
 
+//L'instruction suivante permet d'effacer une zone du canevas
+// ctx.clearRect(100,100,300,300);
 
+//insersion d'une image ---------------------------------------------
+const image = new Image();
+image.src = "sun.jpg";
+image.onload = function() {
+	ctx.drawImage(this, 480, 20, 100, 100);
+};
