@@ -32,4 +32,11 @@ ctx.lineWidth = 10;
 ctx.stroke();
 ctx.fill()
 
+//création d'un arc de cercle  ---------------------------------------------
+ctx.beginPath();
+ctx.arc(80, 320, 40, 1.5*Math.PI , Math.PI , false);
+ctx.lineCap = 'square';
+ctx.strokeStyle = 'purple';
+ctx.stroke();
+
 
