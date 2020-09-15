@@ -8,6 +8,6 @@ for(let i= 0; i<= 10; i++ ){
         } else {
             ctx.fillStyle = 'white';
         }
-        ctx.fillRect(i*60, j*60, 60, 60);
+        ctx.fillRect(i*50, j*50, 50, 50);
     }
 }
